@@ -29,6 +29,10 @@ if(process.env.NODE_ENV==="production"){
   });
 }
 
+import expressListRoutes from "express-list-routes";
+expressListRoutes({ prefix: "/api", router: messageRoutes });
+expressListRoutes({ prefix: "/api", router: authRoutes });
+
 
 server.listen(PORT,()=>{
   console.log("Server is running");
